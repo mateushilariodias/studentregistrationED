@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ot-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu-principal.css">
+    <title>Menu</title>
+</head>
+
+<body>
+
+    <h1>Tela de apresentação do programa</h1>
+    <p>Entre com uma das opções abaixo:</p>
+
+    <ul>
+        <li>1.Cadastrar Alunos.</li>
+        <li>2.Relatóriode Alunos em ordem crescente por Nome.</li>
+        <li>3.Relatório de Alunos em ordem decrescente por RA.</li>
+        <li>4.Relatório de Alunos em ordem crescente por Nome, apenas dos Aprovados.</li>
+        <li>5.Encerre a execução do programa.</li>
+    </ul>
+
+    <form method="post">
+        <label for="opcaoEscolhida"></label>
+        <input type="number" name="opcaoEscolhida" id="opcaoEscolhida" class="inputs"
+            placeholder="Digite o número da opção escolhida" min="1" max="5" required>
+
+        <button type="submit" id="submeter">submeter</button>
+    </form>
+
+</body>
+
+</html>

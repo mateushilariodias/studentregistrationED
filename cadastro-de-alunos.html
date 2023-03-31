@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro-de-alunos.css">
+    <script src="script.js" defer></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <main class="fundo">
+        <div class="content">
+            <h1>Cadastro de Alunos</h1>
+            <p>Insira os dados</p>
+            <br>
+
+            <form method="post">
+
+                <label>Nome Completo</label>
+                <input type="text" placeholder="Digite o seu nome" nome="nome" id="nome" class="inputs" required>
+
+                <label>RA</label>
+                <input type="text" placeholder="Digite o seu RA" nome="ra" id="ra" class="inputs" minlength="13"
+                    maxlength="13" required>
+
+                <label>Idade</label>
+                <input type="number" placeholder="Digite a sua idade" min="16" nome="idade" id="idade" class="inputs"
+                    required>
+
+                <label for="sexo">Sexo</label>
+                <select id="sexo" class="inputs" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="naoBinario">Não binário</option>
+                    <option value="prefiroNaoDizer">Prefiro não dizer</option>
+                </select>
+
+                <label>Média</label>
+                <input type="number" placeholder="Digite a sua média" nome="media" id="media" class="inputs" min="0"
+                    max="10" required>
+
+                <label for="resultado">Resultado</label>
+                <select id="resultado" class="inputs" required>
+                    <option value="aprovado">Aprovado</option>
+                    <option value="reprovado">Reprovado</option>
+                </select>
+
+                <button id="enviar" type="submit" onclick="cadastroDeAlunos.salvarAluno()">Enviar</button>
+
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
