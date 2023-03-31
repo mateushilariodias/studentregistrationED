@@ -64,7 +64,7 @@ h1{
     justify-content: space-evenly;
 }
 
-button[type="submit"]{
+button[type="button"]{
     padding: 1rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -76,6 +76,6 @@ button[type="submit"]{
     border: none;
 }
 
-button[type="submit"]:hover{
+button[type="button"]:hover{
     background-color: rgb(130, 8, 201);
 }
