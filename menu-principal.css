@@ -52,7 +52,7 @@ li {
     border-color: #9333FF;
 }
 
-button[type="submit"]{
+button[type="button"]{
     padding: 0.4rem 1rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -64,6 +64,6 @@ button[type="submit"]{
     border: none;
 }
 
-button[type="submit"]:hover{
+button[type="button"]:hover{
     background-color: rgb(130, 8, 201);
 }
