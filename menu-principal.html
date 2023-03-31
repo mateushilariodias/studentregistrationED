@@ -27,9 +27,20 @@
         <input type="number" name="opcaoEscolhida" id="opcaoEscolhida" class="inputs"
             placeholder="Digite o número da opção escolhida" min="1" max="5" required>
 
-        <button type="submit" id="submeter">submeter</button>
+        <button type="button" id="submeter">submeter</button>
     </form>
 
+    <script>
+        var dadosCodificados = window.location.search.substring(1);
+        var cadastroDeAlunos = decodeURIComponent(dadosCodificados);
+        var cadastroDeAlunos = JSON.parse(cadastroDeAlunos);
+        console.log(cadastroDeAlunos.nome);
+        console.log(cadastroDeAlunos.ra);
+        console.log(cadastroDeAlunos.idade);
+        console.log(cadastroDeAlunos.sexo);
+        console.log(cadastroDeAlunos.media);
+        console.log(cadastroDeAlunos.resultado);
+    </script>
 </body>
 
 </html>
