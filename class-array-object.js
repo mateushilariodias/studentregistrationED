@@ -13,7 +13,7 @@ class CadastroDeAlunos {
         console.log(cadastroJSON)
         localStorage.setItem('alunos',cadastroJSON)
     }
-s
+
     adicionarAluno(aluno) {
         this.alunosCadastrados.push(aluno)
     }
