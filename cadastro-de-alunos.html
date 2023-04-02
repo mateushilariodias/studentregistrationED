@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastro-de-alunos.css">
-    <script src="script.js" defer></script>
+    <script src="class-array-object.js" defer></script>
     <title>Cadastro</title>
 </head>
 
@@ -23,8 +23,7 @@
                 <input type="text" placeholder="Digite o seu nome" nome="nome" id="nome" class="inputs" required>
 
                 <label>RA</label>
-                <input type="text" placeholder="Digite o seu RA" nome="ra" id="ra" class="inputs" minlength="13"
-                    maxlength="13" required>
+                <input type="text" placeholder="Digite o seu RA" nome="ra" id="ra" class="inputs" minlength="13" maxlength="13" required>
 
                 <label>Idade</label>
                 <input type="number" placeholder="Digite a sua idade" min="16" nome="idade" id="idade" class="inputs"
@@ -39,8 +38,7 @@
                 </select>
 
                 <label>Média</label>
-                <input type="number" placeholder="Digite a sua média" nome="media" id="media" class="inputs" min="0"
-                    max="10" required>
+                <input type="text" placeholder="Digite a sua média" nome="media" id="media" class="inputs" min="0" max="10" maxlength="2" required>
 
                 <label for="resultado">Resultado</label>
                 <select id="resultado" class="inputs" required>
@@ -48,7 +46,8 @@
                     <option value="reprovado">Reprovado</option>
                 </select>
 
-                <button id="enviar" type="submit" onclick="cadastroDeAlunos.salvarAluno()">Enviar</button>
+                <button id="enviar" type="button" onclick="cadastroDeAlunos.salvarAluno()">Enviar</button>
+                <button id="voltarAoMenu" type="button" onclick="window.location.href='menu-principal.html'">Voltar ao Menu</button>
 
             </form>
         </div>
