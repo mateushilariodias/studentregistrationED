@@ -9,7 +9,7 @@ function acaoDaOpcaoEscolhida() {
             window.location.href = 'cadastro-de-alunos.html'
             break;
         case 2:
-            console.log('cadastro')
+            
             break;
         case 3:
             console.log('descdastro')
@@ -26,7 +26,7 @@ function acaoDaOpcaoEscolhida() {
               encerrarExecucaoDoPrograma()
             break;
         default:
-            console.log('error')
+            alert('Digite um número de 1 a 5')
             break;
     }
 }
