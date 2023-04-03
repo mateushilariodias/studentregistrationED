@@ -1,6 +1,6 @@
-import { CadastroDeAlunos } from 'class-array-object.js'
+import { CadastroDeAlunos } from './class-array-object.mjs'
 
-const cadastrosDeAlunos = new CadastroDeAlunos()
+var cadastroDeAlunos = new CadastroDeAlunos()
 
 function selectionSort(array, funcaoDeComparacao) {
 
@@ -19,6 +19,6 @@ function selectionSort(array, funcaoDeComparacao) {
     }
 }
 
-selectionSort(cadastrosDeAlunos.alunosCadastrados, (elementOne, elementTwo) => elementOne.nome > elementTwo.nome)
+selectionSort(cadastroDeAlunos.alunosCadastrados, (elementOne, elementTwo) => elementOne.nome > elementTwo.nome)
 
-console.log(cadastrosDeAlunos.alunosCadastrados)
+console.log(cadastroDeAlunos.alunosCadastrados);
