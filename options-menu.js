@@ -18,7 +18,12 @@ function acaoDaOpcaoEscolhida() {
 
             break;
         case 5:
-
+            function encerrarExecucaoDoPrograma() {
+                if(confirm("Você quer encerrar o programa?")) {
+                  window.close();
+                }
+              }
+              encerrarExecucaoDoPrograma()
             break;
         default:
             console.log('error')
