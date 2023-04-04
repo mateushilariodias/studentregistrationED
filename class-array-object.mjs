@@ -12,6 +12,7 @@ class CadastroDeAlunos {
         var dadosCodificados = encodeURIComponent(cadastroJSON)
         console.log(cadastroJSON)
         localStorage.setItem('alunos',cadastroJSON)
+        document.getElementById("formulario").reset()
     }
 
     adicionarAluno(aluno) {
