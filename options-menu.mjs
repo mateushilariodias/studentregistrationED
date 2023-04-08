@@ -9,7 +9,7 @@ function acaoDaOpcaoEscolhida() {
             window.location.href = 'cadastro-de-alunos.html'
             break;
         case 2:
-            
+            window.location.href = 'selection-sort.html'
             break;
         case 3:
             console.log('descdastro')
@@ -18,17 +18,13 @@ function acaoDaOpcaoEscolhida() {
 
             break;
         case 5:
-            function encerrarExecucaoDoPrograma() {
-                if(confirm("Você quer encerrar o programa?")) {
-                  window.close();
-                }
-              }
-              encerrarExecucaoDoPrograma()
+            
             break;
         default:
             alert('Digite um número de 1 a 5')
             break;
     }
+    document.getElementById("formulario").reset()
 }
 
 console.log(JSON.parse(localStorage.getItem('alunos')))

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastro-de-alunos.css">
-    <script src="class-array-object.mjs" defer></script>
+    <script src="array-object.mjs" defer></script>
     <title>Cadastro</title>
 </head>
 
@@ -19,37 +19,43 @@
 
             <form method="post" id="formulario">
 
-                <label>Nome Completo</label>
-                <input type="text" placeholder="Digite o seu nome" nome="nome" id="nome" class="inputs" required>
+                <form method="post">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" placeholder="Digite o seu nome" name="nome" id="nome" class="inputs"
+                        pattern="[A-Za-zÀ-ú\s]+" required>
 
-                <label>RA</label>
-                <input type="text" placeholder="Digite o seu RA" nome="ra" id="ra" class="inputs" minlength="13" maxlength="13" required>
+                    <label for="ra">RA</label>
+                    <input type="text" placeholder="Digite o seu RA" name="ra" id="ra" class="inputs"
+                        pattern="[0-9]{13}" required>
 
-                <label>Idade</label>
-                <input type="number" placeholder="Digite a sua idade" min="16" nome="idade" id="idade" class="inputs"
-                    required>
+                    <label for="idade">Idade</label>
+                    <input type="number" placeholder="Digite a sua idade" name="idade" id="idade" class="inputs"
+                        min="16" max="100" required>
 
-                <label for="sexo">Sexo</label>
-                <select id="sexo" class="inputs" required>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="naoBinario">Não binário</option>
-                    <option value="prefiroNaoDizer">Prefiro não dizer</option>
-                </select>
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" class="inputs" required>
+                        <option value="">Selecione o seu sexo</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="naoBinario">Não binário</option>
+                        <option value="prefiroNaoDizer">Prefiro não dizer</option>
+                    </select>
 
-                <label>Média</label>
-                <input type="text" placeholder="Digite a sua média" nome="media" id="media" class="inputs" min="0" max="10" maxlength="2" required>
+                    <label for="media">Média</label>
+                    <input type="number" placeholder="Digite a sua média" name="media" id="media" class="inputs" min="0" max="10" step="0.01" required>
 
-                <label for="resultado">Resultado</label>
-                <select id="resultado" class="inputs" required>
-                    <option value="aprovado">Aprovado</option>
-                    <option value="reprovado">Reprovado</option>
-                </select>
+                    <label for="resultado">Resultado</label>
+                    <select id="resultado" class="inputs" required>
+                        <option value="">Selecione o resultado</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="reprovado">Reprovado</option>
+                    </select>
 
-                <button id="enviar" type="button" onclick="cadastroDeAlunos.salvarAluno()">Enviar</button>
-                <button id="voltarAoMenu" type="button" onclick="window.location.href='menu-principal.html'">Voltar ao Menu</button>
+                    <button id="enviar" type="button" onclick="salvarAluno()">Enviar</button>
+                    <button id="voltarAoMenu" type="button" onclick="window.location.href='menu-principal.html'">Voltar
+                        ao Menu</button>
 
-            </form>
+                </form>
         </div>
     </main>
 </body>
