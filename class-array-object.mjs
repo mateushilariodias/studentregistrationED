@@ -2,12 +2,16 @@ class CadastroDeAlunos {
     constructor() {
         this.alunosCadastrados = []
     }
+
     salvarAluno() {
         let aluno = this.lerDados()
+
         if(this.validarCampos(aluno)){
             this.adicionarAluno(aluno)
         }
+
         console.log(this.alunosCadastrados)
+
         var cadastroJSON = JSON.stringify(cadastroDeAlunos)
         var dadosCodificados = encodeURIComponent(cadastroJSON)
         console.log(cadastroJSON)
@@ -26,7 +30,6 @@ class CadastroDeAlunos {
         aluno.idade = document.getElementById('idade').value;
         aluno.sexo = document.getElementById('sexo').value;
         aluno.media = document.getElementById('media').value;
-        aluno.resultado = document.getElementById('resultado').value;
         aluno.resultado = (aluno.media >= 6) ? 'Aprovado' : 'Reprovado';
         return aluno
     }
@@ -50,6 +53,7 @@ class CadastroDeAlunos {
             alert(mensagemDeAlerta)
             return false
         }
+
         return true
     }
 

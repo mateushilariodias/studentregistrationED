@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function selectionSort(array, funcaoDeComparacao) {
+
+            for (let posicaoSelecionada = 0; posicaoSelecionada < array.length - 1; posicaoSelecionada++) {
+                let menorPosicao = posicaoSelecionada + 1
+
+                for (let i = menorPosicao + 1; i < array.length; i++) {
+                    if (funcaoDeComparacao(array[menorPosicao] > array[i])) {
+                        menorPosicao = i
+                    }
+                }
+
+                if (funcaoDeComparacao(array[posicaoSelecionada] > array[menorPosicao])) {
+                    [array[posicaoSelecionada], array[menorPosicao]] = [array[menorPosicao], array[posicaoSelecionada]]
+                }
+            }
+        }
+
+        let cadastroDeAlunosJSON = JSON.parse(localStorage.getItem('alunos'));
+        let cadastroDeAlunosArray = Array.isArray(cadastroDeAlunosJSON) ? cadastroDeAlunosJSON : Object.values(cadastroDeAlunosJSON);
+        selectionSort(cadastroDeAlunosArray, (elementOne, elementTwo) => elementOne.idade < elementTwo.idade);
+
+        console.log(cadastroDeAlunosArray)
+
+
+    </script>
+</body>
+
+</html>

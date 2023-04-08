@@ -9,7 +9,7 @@ function acaoDaOpcaoEscolhida() {
             window.location.href = 'cadastro-de-alunos.html'
             break;
         case 2:
-            
+            window.location.href = 'selection-sort.html'
             break;
         case 3:
             console.log('descdastro')
