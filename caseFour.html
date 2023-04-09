@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu-principal.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="relatorio">Relatório de Alunos em ordem crescente por Nome: </div>
+    <button type="button" id="voltar" onclick="window.location.href = './menu-principal.html';">Voltar</button>
+
+    <script defer>
+
+        function bubbleSort(array, funcaoDeComparacao) {
+            let swap
+
+            do {
+                swap = false
+                for (let i = 0; i < array.length - 1; i++) {
+                    if (funcaoDeComparacao(array[i], array[i + 1])) {
+                        [array[i], array[i + 1]] = [array[i + 1], array[i]]
+                        swap = true
+                    }
+                }
+            } while (swap)
+        }
+
+        let alunosCadastrados = JSON.parse(localStorage.getItem('alunosCadastrados'));
+        bubbleSort(alunosCadastrados, (elementOne, elementTwo) => elementOne.nome > elementTwo.nome)
+
+        let relatorioDiv = document.getElementById('relatorio')
+
+        alunosCadastrados.forEach(aluno => {
+            if (aluno.resultado === "Aprovado") {
+                let relatorioPorNomeDiv = document.createElement("div")
+                relatorioPorNomeDiv.innerText = JSON.stringify(aluno)
+                relatorioDiv.appendChild(relatorioPorNomeDiv)
+            }
+        })
+
+    </script>
+</body>
+
+</html>

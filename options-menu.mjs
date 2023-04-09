@@ -9,16 +9,16 @@ function acaoDaOpcaoEscolhida() {
             window.location.href = 'cadastro-de-alunos.html'
             break;
         case 2:
-            window.location.href = 'selection-sort.html'
+            window.location.href = 'caseTwo.html'
             break;
         case 3:
-            console.log('descdastro')
+            window.location.href = 'caseThree.html'
             break;
         case 4:
-
+            window.location.href = 'caseFour.html'
             break;
         case 5:
-            
+            location.reload()
             break;
         default:
             alert('Digite um número de 1 a 5')
@@ -27,5 +27,5 @@ function acaoDaOpcaoEscolhida() {
     document.getElementById("formulario").reset()
 }
 
-console.log(JSON.parse(localStorage.getItem('alunos')))
+console.log(JSON.parse(localStorage.getItem('alunosCadastrados')))
 submeter.addEventListener('click', acaoDaOpcaoEscolhida)

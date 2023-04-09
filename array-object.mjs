@@ -6,11 +6,7 @@ function salvarAluno() {
         adicionarAluno(aluno)
     }
     console.log(alunosCadastrados)
-    // var cadastroJSON = JSON.stringify(alunosCadastrados)
-    // var dadosCodificados = encodeURIComponent(cadastroJSON)
     localStorage.setItem('alunosCadastrados', JSON.stringify(alunosCadastrados))
-    // console.log(cadastroJSON)
-    // localStorage.setItem('alunos', cadastroJSON)
 }
 
 function adicionarAluno(aluno) {

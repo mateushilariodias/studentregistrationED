@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu-principal.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="relatorio">Relatório de Alunos em ordem decrescente por RA: </div>
+    <button type="button" id="voltar" onclick="window.location.href = './menu-principal.html';">Voltar</button>
+
+    <script defer>
+
+        function selectionSort(array, funcaoDeComparacao) {
+
+            for (let posicaoSelecionada = 0; posicaoSelecionada < array.length - 1; posicaoSelecionada++) {
+                let menorPosicao = posicaoSelecionada + 1
+
+                for (let i = menorPosicao + 1; i < array.length; i++) {
+                    if (funcaoDeComparacao(array[menorPosicao], array[i])) {
+                        menorPosicao = i
+                    }
+                }
+
+                if (funcaoDeComparacao(array[posicaoSelecionada], array[menorPosicao])) {
+                    [array[posicaoSelecionada], array[menorPosicao]] = [array[menorPosicao], array[posicaoSelecionada]]
+                }
+            }
+        }
+        let alunosCadastrados = JSON.parse(localStorage.getItem('alunosCadastrados'));
+        selectionSort(alunosCadastrados, (elementOne, elementTwo) => elementOne.ra < elementTwo.ra)
+
+        let relatorioDiv = document.getElementById('relatorio')
+
+        alunosCadastrados.forEach(aluno => {
+            let relatorioPorNomeDiv = document.createElement("div")
+            relatorioPorNomeDiv.innerText = JSON.stringify(aluno)
+            relatorioDiv.appendChild(relatorioPorNomeDiv)
+        })
+
+    </script>
+</body>
+
+</html>

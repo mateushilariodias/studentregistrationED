@@ -16,32 +16,28 @@
 
     <script defer>
 
-        function selectionSort(array, funcaoDeComparacao) {
+        function bubbleSort(array, funcaoDeComparacao) {
+            let swap
 
-            for (let posicaoSelecionada = 0; posicaoSelecionada < array.length - 1; posicaoSelecionada++) {
-                let menorPosicao = posicaoSelecionada + 1
-
-                for (let i = menorPosicao + 1; i < array.length; i++) {
-                    if (funcaoDeComparacao(array[menorPosicao] > array[i])) {
-                        menorPosicao = i
+            do {
+                swap = false
+                for (let i = 0; i < array.length - 1; i++) {
+                    if (funcaoDeComparacao(array[i], array[i + 1])) {
+                        [array[i], array[i + 1]] = [array[i + 1], array[i]]
+                        swap = true
                     }
                 }
-
-                if (funcaoDeComparacao(array[posicaoSelecionada] > array[menorPosicao])) {
-                    [array[posicaoSelecionada], array[menorPosicao]] = [array[menorPosicao], array[posicaoSelecionada]]
-                }
-            }
+            } while (swap)
         }
 
         let alunosCadastrados = JSON.parse(localStorage.getItem('alunosCadastrados'));
-        
-        selectionSort(alunosCadastrados, (elementOne, elementTwo) => elementOne.nome > elementTwo.nome)
+        bubbleSort(alunosCadastrados, (elementOne, elementTwo) => elementOne.nome > elementTwo.nome)
 
         let relatorioDiv = document.getElementById('relatorio')
 
         alunosCadastrados.forEach(aluno => {
             let relatorioPorNomeDiv = document.createElement("div")
-            relatorioPorNomeDiv.innerText = aluno.nome
+            relatorioPorNomeDiv.innerText = JSON.stringify(aluno)
             relatorioDiv.appendChild(relatorioPorNomeDiv)
         })
 
